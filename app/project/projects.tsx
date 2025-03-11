@@ -16,11 +16,11 @@ const Projects = () => {
     <main>
       <section className="text-center py-5">
         <div className="container">
-          <div className="main-title my-5 relative">
-            <h2>My Projects</h2>
+          <div className="font-bold my-5 relative">
+            <h2 className="text-4xl my-3">My Projects</h2>
             <p>What I build</p>
           </div>
-          <ul className=" bg-amber-500 text-white flex flex-col py-3 justify-around px-0 flex-wrap md:flex-row">
+          <ul className="switcher my-10 - bg-amber-500 text-white flex flex-col py-3 justify-around px-0 flex-wrap md:flex-row">
             {(["all", "JavaScript", "Wordpress", "React"] as Category[]).map((category) => (
               <li
                 key={category}
@@ -32,34 +32,32 @@ const Projects = () => {
             ))}
           </ul>
           <div className="gallery text-start">
-            <div className="gap-5 flex justify-center flex-wrap">
+            <div className="gap-5 flex justify-center flex-wrap  items-stretch">
               {projects
                 .filter((project) => activeCategory === "all" || project.category === activeCategory)
                 .map((project, index) => (
-                  <div className={`post ${project.category} mb-3`} key={index}>
-                    <div className="card" style={{ width: "18rem" }}>
-                      <img src={project.imageSrc} className="card-img-top" alt={project.title} />
-                      <div className="card-body">
-                        <h5 className="card-title text-info">{project.title}</h5>
-                        <p className="card-text">{project.description}</p>
-                        <div className="flex justify-around">
+                  <div className={`post ${project.category} flex flex-col mb-3  `} key={index}>
+                    <div className=" max-w-sm flex flex-col h-full rounded overflow-hidden shadow-lg " style={{ width: "18rem" }}>
+                      <img src={project.imageSrc} className="w-full" alt={project.title} />
+                      <div className="px-6 py-4 flex-grow">
+                        <h5 className="font-bold text-xl mb-2">{project.title}</h5>
+                        <p className="text-gray-700 text-base">{project.description}</p>
+                        <div className="flex justify-around my-3">
                           {project.category !== "Wordpress" && (
                             <a
                               href={project.github}
-                              className="btn"
+                              className="bg-pink-500 p-3 rounded-2xl"
                               rel="noreferrer"
                               target="_blank"
-                              style={{ backgroundColor: "#ffc0cb" }}
                             >
                               Github
                             </a>
                           )}
                           <a
                             href={project.link}
-                            className="btn"
+                            className="bg-cyan-500 p-3 rounded-2xl "
                             rel="noreferrer"
                             target="_blank"
-                            style={{ backgroundColor: "#BFECFF" }}
                           >
                             Preview
                           </a>
