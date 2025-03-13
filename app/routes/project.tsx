@@ -1,6 +1,9 @@
 import type { Route } from "./+types/project";
 import  Projects  from "../project/projects";
 
+import { Header , Footer} from "../components/index"
+
+
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "Amine Triki | Projects" },
@@ -9,5 +12,12 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function project() {
-  return <Projects />;
+  return (
+    <>
+      <Header/>
+      <Projects />;
+      <Footer/>
+    </>
+    );
+
 }

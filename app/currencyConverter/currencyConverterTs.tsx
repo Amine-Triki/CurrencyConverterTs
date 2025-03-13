@@ -48,10 +48,10 @@ const CurrencyConverter: React.FC = () => {
   };
 
   return (
-    <main>
+    <main className="flex justify-center items-center">
       <div className="converter">
         <h2>Currency Converter</h2>
-        <div className="input-group">
+        <div className="input-group border-2">
           <input type="number" value={amount1} onChange={handleAmount1Change} />
           <select value={currency1} onChange={(e) => setCurrency1(e.target.value)}>
             {Object.keys(rates).map((currency) => (
@@ -62,7 +62,7 @@ const CurrencyConverter: React.FC = () => {
           </select>
         </div>
 
-        <div className="input-group">
+        <div className="input-group border-2">
           <input type="number" value={amount2} onChange={handleAmount2Change} />
           <select value={currency2} onChange={(e) => setCurrency2(e.target.value)}>
             {Object.keys(rates).map((currency) => (

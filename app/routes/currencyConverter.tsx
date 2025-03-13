@@ -1,5 +1,7 @@
 import type { Route } from "./+types/currencyConverter";
 import   CurrencyConverterTs    from "../currencyConverter/currencyConverterTs";
+import { Header , Footer} from "../components/index"
+
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -9,5 +11,12 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function currencyConverter() {
-  return <CurrencyConverterTs />;
+  return(
+    <>
+      <Header/>
+      <CurrencyConverterTs />;
+      <Footer/>
+    </>
+    );
+  
 }
