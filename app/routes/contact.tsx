@@ -1,4 +1,4 @@
-import type { Route } from "./+types/home";
+import type { Route } from "./+types/contact";
 import  ContactUs  from "../contact/contactUs";
 
 export function meta({}: Route.MetaArgs) {
@@ -8,6 +8,6 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function Home() {
+export default function contact() {
   return <ContactUs />;
 }
