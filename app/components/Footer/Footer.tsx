@@ -1,5 +1,4 @@
 import "./Footer.css";
-import { Link } from "react-router";
 
 
 const year: number = new Date().getFullYear();
